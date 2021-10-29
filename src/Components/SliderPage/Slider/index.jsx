@@ -1,7 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './slider.module.sass'
 
 export default function Slider(props) {
+    const [click, setClick] = useState(0)
+
+    const changeClick = ()=>{
+        setClick(click + 1)
+    }
+
+    console.log(props.slides)
+    console.log(click)
     return (
         <>
         <div className={styles.settingsPanelWrapper}>
@@ -14,8 +22,8 @@ export default function Slider(props) {
         </div>
         <div className={styles.sliderWrapper}>
             <button>Prev</button>
-            <img className={styles.image} src={props.slides[4]} alt="" />
-            <button>Next</button>
+            <img className={styles.image} src={props.slides[click]} alt="" />
+            <button onClick = {changeClick}>Next</button>
         </div>
         </>
     )
