@@ -12,12 +12,16 @@ export default function Slider(props) {
         setClick(click = (click + 1) % props.slides.length)
     }
 
+    const slideShow = ()=>{
+        setInterval(clickNextSlide, 3000)
+    }
+
     console.log(props.slides)
     console.log(click)
     return (
         <>
         <div className={styles.settingsPanelWrapper}>
-            <button>Slide show</button>
+            <button onClick={slideShow}>Slide show</button>
             <div className={styles.inputWrapper}>
             <p>Choose delay slide show in second</p>
             <input type="text" />
