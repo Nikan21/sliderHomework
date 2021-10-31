@@ -2,10 +2,14 @@ import React, {useState} from 'react'
 import styles from './slider.module.sass'
 
 export default function Slider(props) {
-    const [click, setClick] = useState(0)
+    let [click, setClick] = useState(0)
 
-    const changeClick = ()=>{
-        setClick(click + 1)
+    const clickPrevSlide = ()=>{
+        setClick(click = (click - 1 + props.slides.length) % props.slides.length)
+    }
+
+    const clickNextSlide = ()=>{
+        setClick(click = (click + 1) % props.slides.length)
     }
 
     console.log(props.slides)
@@ -21,9 +25,9 @@ export default function Slider(props) {
             <button>Full screen</button>
         </div>
         <div className={styles.sliderWrapper}>
-            <button>Prev</button>
+            <button onClick = {clickPrevSlide}>Prev</button>
             <img className={styles.image} src={props.slides[click]} alt="" />
-            <button onClick = {changeClick}>Next</button>
+            <button onClick = {clickNextSlide}>Next</button>
         </div>
         </>
     )
