@@ -32,8 +32,6 @@ export default function Slider(props) {
     }
   };
 
-  /*Вопрос*/
-
   const stopSlideShow = () => {
     clearInterval(autoClick);
     changeAutoClick(null);
@@ -56,7 +54,8 @@ export default function Slider(props) {
           <input
             type="number"
             name="delay"
-            // min
+            min = '1'
+            max = '60'
             value={delay}
             onChange={handleChange}
           />
