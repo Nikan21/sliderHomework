@@ -1,3 +1,8 @@
+$main-color: white
+$background-color: #c9171d
+$border:1px solid #c9171d
+$font-weight: 800   
+
 .settingsPanelWrapper
     display: flex
     justify-content: center
@@ -10,10 +15,21 @@
     justify-content: center
     align-items: center
 
+.mainText
+    font-size: 18px
+    color: $main-color
+    font-weight: $font-weight  
+
 .sliderWrapper    
     display: flex
     justify-content: center
     margin-top: 100px
+
+.buttonFullScreen
+    color: $main-color   
+    background-color: $background-color     
+    border: $border
+    font-weight: $font-weight
 
 .image
     height:450px        
@@ -26,8 +42,13 @@
     align-items: center
 
 .ButtonSlideShow
+    margin: 5px 0 0 0
     width: 100px 
-    height: 5vh          
+    height: 5vh  
+    color: $main-color   
+    background-color: $background-color     
+    border: $border
+    font-weight: $font-weight
 
 .fullScrean
     display: flex
