@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {FullScreen, useFullScreenHandle} from "react-full-screen";
 import styles from "./slider.module.sass";
 
 export default function Slider(props) {
@@ -36,6 +37,8 @@ export default function Slider(props) {
     clearInterval(autoClick);
     changeAutoClick(null);
   };
+
+  const handle = useFullScreenHandle();
   
   console.log(delay);
   return (
@@ -60,11 +63,11 @@ export default function Slider(props) {
             onChange={handleChange}
           />
         </div>
-        <button>Full screen</button>
+        <button onClick={handle.enter}>Full screen</button>
       </div>
       <div className={styles.sliderWrapper}>
         <button onClick={clickPrevSlide}>Prev</button>
-        <img className={styles.image} src={props.slides[click]} alt="" />
+          <FullScreen className={styles.fullScrean} handle={handle}><img className={styles.image} src={props.slides[click]} alt="" /></FullScreen>
         <button onClick={clickNextSlide}>Next</button>
       </div>
     </>
