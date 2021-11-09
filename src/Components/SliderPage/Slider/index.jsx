@@ -53,7 +53,7 @@ export default function Slider(props) {
           </button>
         </div>
         <div className={styles.inputWrapper}>
-          <p>Choose delay slide show in second</p>
+          <p className={styles.mainText}>Choose delay slide show in second</p>
           <input
             type="number"
             name="delay"
@@ -63,12 +63,12 @@ export default function Slider(props) {
             onChange={handleChange}
           />
         </div>
-        <button onClick={handle.enter}>Full screen</button>
+        <button className={styles.buttonFullScreen} onClick={handle.enter}>Full screen</button>
       </div>
       <div className={styles.sliderWrapper}>
-        <button onClick={clickPrevSlide}>Prev</button>
+        <button onClick={clickPrevSlide}>{'<'}</button>
           <FullScreen className={styles.fullScrean} handle={handle}><img className={styles.image} src={props.slides[click]} alt="" /></FullScreen>
-        <button onClick={clickNextSlide}>Next</button>
+        <button onClick={clickNextSlide}>{'>'}</button>
       </div>
     </>
   );
