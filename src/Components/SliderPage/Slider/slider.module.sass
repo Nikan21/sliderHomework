@@ -20,16 +20,10 @@ $font-weight: 800
     color: $main-color
     font-weight: $font-weight  
 
-.sliderWrapper    
+.sliderWrapper
+    height: 60vh    
     display: flex
     justify-content: center
-    margin-top: 100px
-
-.buttonFullScreen
-    color: $main-color   
-    background-color: $background-color     
-    border: $border
-    font-weight: $font-weight
 
 .image
     height:450px        
@@ -49,8 +43,42 @@ $font-weight: 800
     background-color: $background-color     
     border: $border
     font-weight: $font-weight
+    cursor: pointer
+
+.buttonFullScreen
+    color: $main-color   
+    background-color: $background-color     
+    border: $border
+    font-weight: $font-weight
+    cursor: pointer
 
 .fullScrean
     display: flex
     justify-content: center
     align-items: center    
+
+.fullScreenWrapper
+    display: flex
+    flex-direction: column 
+    align-items: center    
+
+.inputTime
+    width: 100px
+
+.buttonExitFullScreen
+    width: 100px
+    margin-bottom: 25px
+    color: $main-color   
+    background-color: $background-color     
+    border: $border
+    font-weight: $font-weight    
+
+.sideButtonLeft
+    width: 40px
+    height: 40px
+    margin-right: 10px
+            
+.sideButtonRight
+    width: 40px
+    height: 40px
+    margin-left: 10px            
