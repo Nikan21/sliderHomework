@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {FullScreen, useFullScreenHandle} from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import styles from "./slider.module.sass";
 
 export default function Slider(props) {
@@ -39,7 +39,7 @@ export default function Slider(props) {
   };
 
   const handle = useFullScreenHandle();
-  
+
   console.log(delay);
   return (
     <>
@@ -55,20 +55,28 @@ export default function Slider(props) {
         <div className={styles.inputWrapper}>
           <p className={styles.mainText}>Choose delay slide show in second</p>
           <input
+            className={styles.inputTime}
             type="number"
             name="delay"
-            min = '1'
-            max = '60'
+            min="1"
+            max="60"
             value={delay}
             onChange={handleChange}
           />
         </div>
-        <button className={styles.buttonFullScreen} onClick={handle.enter}>Full screen</button>
+        <button className={styles.buttonFullScreen} onClick={handle.enter}>
+          Full screen
+        </button>
       </div>
       <div className={styles.sliderWrapper}>
-        <button onClick={clickPrevSlide}>{'<'}</button>
-          <FullScreen className={styles.fullScrean} handle={handle}><img className={styles.image} src={props.slides[click]} alt="" /></FullScreen>
-        <button onClick={clickNextSlide}>{'>'}</button>
+        <FullScreen className={styles.fullScrean} handle={handle}>
+        <button className={styles.sideButtonLeft} onClick={clickPrevSlide}>{"<"}</button>
+          <div className={styles.fullScreenWrapper}>
+          <button className={styles.buttonExitFullScreen} onClick={handle.exit}>Exit Full Screen</button>
+          <img className={styles.image} src={props.slides[click]} alt="" />
+          </div>
+        <button className={styles.sideButtonRight} onClick={clickNextSlide}>{">"}</button>
+        </FullScreen>
       </div>
     </>
   );
