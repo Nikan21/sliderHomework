@@ -1,84 +1,81 @@
-$main-color: white
-$background-color: #c9171d
-$border:1px solid #c9171d
-$font-weight: 800   
+$displayFlex: flex
+$mainColorWhite: white
+$backgroundColorRed: #c9171d
+$borderRed: 1px solid #c9171d
+$fontWeight: 800
 
 .settingsPanelWrapper
-    display: flex
+    display: $displayFlex
     justify-content: center
     margin-top: 50px
-    
+
+.buttonsSlideShowWrapper
+    display: $displayFlex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.buttonSlideShow,
+.buttonFullScreen,
+.buttonExitFullScreen,
+.sideButtonLeft,
+.sideButtonRight
+    color: $mainColorWhite
+    background-color: $backgroundColorRed
+    border: $borderRed
+    font-weight: $fontWeight
+    cursor: pointer
+
+.buttonSlideShow
+    height: 5vh
+    width: 100px
+    margin: 5px 0 0 0
+
 .inputWrapper
     min-width: 15%
-    display: flex
-    flex-direction: column    
+    display: $displayFlex
+    flex-direction: column
     justify-content: center
     align-items: center
 
 .mainText
-    font-size: 18px
-    color: $main-color
-    font-weight: $font-weight  
-
-.sliderWrapper
-    height: 60vh    
-    display: flex
-    justify-content: center
-
-.image
-    height:450px        
-    width:400px
-
-.buttonsSlideShowWrapper
-    display: flex
-    flex-direction: column
-    justify-content: center 
-    align-items: center
-
-.ButtonSlideShow
-    margin: 5px 0 0 0
-    width: 100px 
-    height: 5vh  
-    color: $main-color   
-    background-color: $background-color     
-    border: $border
-    font-weight: $font-weight
-    cursor: pointer
-
-.buttonFullScreen
-    color: $main-color   
-    background-color: $background-color     
-    border: $border
-    font-weight: $font-weight
-    cursor: pointer
-
-.fullScrean
-    display: flex
-    justify-content: center
-    align-items: center    
-
-.fullScreenWrapper
-    display: flex
-    flex-direction: column 
-    align-items: center    
+    font-size: 16px
+    color: $mainColorWhite
+    font-weight: $fontWeight
 
 .inputTime
     width: 100px
 
+.sliderWrapper
+    height: 60vh
+    display: $displayFlex
+    justify-content: center
+
+.fullScrean
+    display: $displayFlex
+    justify-content: center
+    align-items: center
+
+.fullScreenWrapper
+    display: $displayFlex
+    flex-direction: column
+    align-items: center
+
 .buttonExitFullScreen
     width: 100px
     margin-bottom: 25px
-    color: $main-color   
-    background-color: $background-color     
-    border: $border
-    font-weight: $font-weight    
+
+.image
+    height: 450px
+    width: 400px
+
+.sideButtonLeft,
+.sideButtonRight
+    height: 40px
+    width: 40px
 
 .sideButtonLeft
-    width: 40px
-    height: 40px
     margin-right: 10px
-            
+
 .sideButtonRight
-    width: 40px
-    height: 40px
-    margin-left: 10px            
+    margin-left: 10px

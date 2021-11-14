@@ -40,15 +40,14 @@ export default function Slider(props) {
 
   const handle = useFullScreenHandle();
 
-  console.log(delay);
   return (
     <>
       <div className={styles.settingsPanelWrapper}>
         <div className={styles.buttonsSlideShowWrapper}>
-          <button className={styles.ButtonSlideShow} onClick={startSlideShow}>
+          <button className={styles.buttonSlideShow} onClick={startSlideShow}>
             Slide show
           </button>
-          <button className={styles.ButtonSlideShow} onClick={stopSlideShow}>
+          <button className={styles.buttonSlideShow} onClick={stopSlideShow}>
             Stop slide show
           </button>
         </div>
@@ -70,12 +69,21 @@ export default function Slider(props) {
       </div>
       <div className={styles.sliderWrapper}>
         <FullScreen className={styles.fullScrean} handle={handle}>
-        <button className={styles.sideButtonLeft} onClick={clickPrevSlide}>{"<"}</button>
+          <button className={styles.sideButtonLeft} onClick={clickPrevSlide}>
+            {"<"}
+          </button>
           <div className={styles.fullScreenWrapper}>
-          <button className={styles.buttonExitFullScreen} onClick={handle.exit}>Exit Full Screen</button>
-          <img className={styles.image} src={props.slides[click]} alt="" />
+            <button
+              className={styles.buttonExitFullScreen}
+              onClick={handle.exit}
+            >
+              Exit Full Screen
+            </button>
+            <img className={styles.image} src={props.slides[click]} alt="" />
           </div>
-        <button className={styles.sideButtonRight} onClick={clickNextSlide}>{">"}</button>
+          <button className={styles.sideButtonRight} onClick={clickNextSlide}>
+            {">"}
+          </button>
         </FullScreen>
       </div>
     </>
